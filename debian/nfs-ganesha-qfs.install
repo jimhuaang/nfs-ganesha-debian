@@ -1,0 +1,2 @@
+usr/lib/*/ganesha/libfsalqfs.so*
+etc/ganesha/qfs.conf

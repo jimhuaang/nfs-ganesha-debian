@@ -25,11 +25,11 @@ override_dh_auto_configure:
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 		-DUSE_FSAL_NULL=YES \
 		-DUSE_FSAL_XFS=YES \
-		-DUSE_FSAL_CEPH=YES \
-		-DUSE_FSAL_RGW=YES \
-		-DUSE_FSAL_GPFS=YES \
+		-DUSE_FSAL_CEPH=NO \
+		-DUSE_FSAL_RGW=NO \
+		-DUSE_FSAL_GPFS=NO \
 		-DUSE_FSAL_PANFS=NO \
-		-DUSE_FSAL_GLUSTER=YES \
+		-DUSE_FSAL_GLUSTER=NO \
 		-DUSE_SYSTEM_NTIRPC=YES \
 		-DUSE_9P_RDMA=NO \
 		-DUSE_LTTNG=NO \
@@ -47,6 +47,7 @@ override_dh_auto_build:
 
 override_dh_auto_test:
 
+# cp src/config_samples/qfs.conf debian/tmp/etc/ganesha/qfs.conf
 override_dh_install:
 	mkdir -p debian/tmp/etc/ganesha/
 	mkdir -p debian/tmp/lib/systemd/system
@@ -60,13 +61,6 @@ override_dh_install:
 	cp src/config_samples/vfs.conf debian/tmp/etc/ganesha/vfs.conf
 	cp src/config_samples/xfs.conf debian/tmp/etc/ganesha/xfs.conf
 	cp src/config_samples/mem.conf debian/tmp/etc/ganesha/mem.conf
-	cp src/config_samples/gluster.conf debian/tmp/etc/ganesha/gluster.conf
-	cp src/config_samples/ceph.conf debian/tmp/etc/ganesha/ceph.conf
-	cp src/config_samples/gpfs.conf debian/tmp/etc/ganesha/gpfs.conf
-	cp src/config_samples/gpfs.ganesha.exports.conf debian/tmp/etc/ganesha/gpfs.ganesha.exports.conf
-	cp src/config_samples/gpfs.ganesha.log.conf debian/tmp/etc/ganesha/gpfs.ganesha.log.conf
-	cp src/config_samples/gpfs.ganesha.main.conf debian/tmp/etc/ganesha/gpfs.ganesha.main.conf
-	cp src/config_samples/gpfs.ganesha.nfsd.conf debian/tmp/etc/ganesha/gpfs.ganesha.nfsd.conf
 	cp src/config_samples/logrotate_ganesha debian/tmp/etc/logrotate.d/nfs-ganesha
 	cp src/scripts/systemd/nfs-ganesha.service.debian8 debian/tmp/lib/systemd/system/nfs-ganesha.service
 	cp src/scripts/systemd/nfs-ganesha-config.service debian/tmp/lib/systemd/system/

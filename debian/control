@@ -46,45 +46,6 @@ Description: nfs-ganesha is a NFS server in User Space
  and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
  HPSS, LUSTRE, XFS and ZFS.
 
-Package: nfs-ganesha-mount-9p
-Multi-Arch: same
-Architecture: any
-Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends},
-         nfs-ganesha (=${binary:Version}),
-Description: nfs-ganesha mount.9P
- NFS-GANESHA is a NFS Server running in user space with a large cache.
- It comes with various backend modules to support different file systems
- and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
- HPSS, LUSTRE, XFS and ZFS.
- This package contains mount.9P
-
-Package: nfs-ganesha-gluster
-Multi-Arch: same
-Architecture: any
-Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends},
-         nfs-ganesha (=${binary:Version}),
-         glusterfs-common (>= 3.10.0)
-Description: nfs-ganesha fsal gluster libraries
- NFS-GANESHA is a NFS Server running in user space with a large cache.
- It comes with various backend modules to support different file systems
- and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
- HPSS, LUSTRE, XFS and ZFS.
- This package contains a library for FSAL_GLUSTER and an example .conf file
-
-Package: nfs-ganesha-ceph
-Multi-Arch: same
-Architecture: any
-Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends},
-         nfs-ganesha (=${binary:Version})
-Description: nfs-ganesha fsal ceph libraries
- NFS-GANESHA is a NFS Server running in user space with a large cache.
- It comes with various backend modules to support different file systems
- and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
- HPSS, LUSTRE, XFS and ZFS.
- This package contains a library for a FSAL_CEPH and an example ceph.conf file
 
 Package: nfs-ganesha-vfs
 Multi-Arch: same
@@ -150,20 +111,6 @@ Description: nfs-ganesha fsal proxy libraries
  and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
  HPSS, LUSTRE, XFS and ZFS.
  This package contains a library for a FSAL_PROXY
-
-Package: nfs-ganesha-gpfs
-Multi-Arch: same
-Architecture: any
-Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends},
-         nfs-ganesha (=${binary:Version})
-Description: nfs-ganesha fsal gpfs libraries
- NFS-GANESHA is a NFS Server running in user space with a large cache.
- It comes with various backend modules to support different file systems
- and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
- HPSS, LUSTRE, XFS and ZFS.
- This package contains a library for a FSAL_GPFS and conf files.
-
 
 Package: python-nfs-ganesha
 Pre-Depends: ${misc:Pre-Depends}
