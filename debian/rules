@@ -22,7 +22,7 @@ override_dh_auto_configure:
 	 cd src && dh_auto_configure -- \
 		-DBUILD_CONFIG=debian \
 		-DFSAL_DESTINATION=/usr/lib/${DEB_HOST_MULTIARCH}/ganesha \
-		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+		-DCMAKE_BUILD_TYPE=Debug \
 		-DUSE_FSAL_NULL=YES \
 		-DUSE_FSAL_XFS=YES \
 		-DUSE_FSAL_CEPH=NO \
