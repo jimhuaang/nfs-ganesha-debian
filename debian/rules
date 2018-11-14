@@ -71,10 +71,27 @@ override_dh_install:
 	cp src/scripts/ganeshactl/org.ganesha.nfsd.conf debian/tmp/etc/dbus-1/system.d/nfs-ganesha-dbus.conf
 	cp src/scripts/nfs-ganesha-config.sh debian/tmp/usr/lib/ganesha/
 	install -m 755 src/tools/mount.9P debian/tmp/usr/sbin/
-	make -C src/obj-*-linux-gnu* install && dh_install --sourcedir=./src
+	make -C src/obj-*-linux-gnu* install && dh_install --sourcedir=./src --list-missing
 
 # dpkg-buildpackage uses make to process debian/rules, in this process dpkg-buildpackage it might call dpkg-shlibdeps
 # and fail if dependency (libntirpc) info can't be found.
 # ingore it for now
 override_dh_shlibdeps:
 	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+
+override_dh_strip:
+	dh_strip \
+		-Xnfs-ganesha-qfs \
+		-Xnfs-ganesha-vfs \
+		-Xnfs-ganesha-xfs \
+		-Xnfs-ganesha-mem \
+		-Xnfs-ganesha-nullfs \
+		-Xnfs-ganesha-proxy \
+		--dbg-package=nfs-ganesha-dbg
+	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-qfs-dbg
+	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-vfs-dbg
+	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-xfs-dbg
+	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-mem-dbg
+	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-nullfs-dbg
+	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-proxy-dbg
+

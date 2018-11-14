@@ -151,3 +151,85 @@ Description: Documentation for nfs-ganesha
  .
  This package contains documentation and examples for nfs-ganesha
 
+Package: nfs-ganesha-dbg
+Architecture: any
+Section: debug
+Depends: nfs-ganesha (=${binary:Version}), ${misc:Depends}
+Description: nfs-ganesha is a NFS server in User Space
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
+ This package contains the debugging symbols for nfs-ganesha.
+
+Package: nfs-ganesha-qfs-dbg
+Multi-Arch: same
+Architecture: any
+Section: debug
+Depends: nfs-ganesha-qfs (=${binary:Version}), ${misc:Depends}
+Description: nfs-ganesha fsal qfs libraries
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
+ This package contains the debugging symbols for nfs-ganesha-qfs.
+
+Package: nfs-ganesha-vfs-dbg
+Multi-Arch: same
+Architecture: any
+Section: debug
+Depends: nfs-ganesha-vfs (=${binary:Version}), ${misc:Depends}
+Description: nfs-ganesha fsal vfs libraries
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
+ This package contains the debugging symbols for nfs-ganesha-vfs.
+
+Package: nfs-ganesha-xfs-dbg
+Multi-Arch: same
+Architecture: any
+Section: debug
+Depends: nfs-ganesha-xfs (=${binary:Version}), ${misc:Depends}
+Description: nfs-ganesha fsal xfs libraries
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
+ This package contains the debugging symbols for nfs-ganesha-xfs. 
+
+Package: nfs-ganesha-mem-dbg
+Multi-Arch: same
+Architecture: any
+Section: debug
+Depends: nfs-ganesha-mem (=${binary:Version}), ${misc:Depends}
+Description: nfs-ganesha fsal mem libraries
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
+ This package contains the debugging symbols for nfs-ganesha-mem. 
+
+Package: nfs-ganesha-nullfs-dbg
+Multi-Arch: same
+Architecture: any
+Section: debug
+Depends: nfs-ganesha-nullfs (=${binary:Version}), ${misc:Depends}
+Description: nfs-ganesha fsal nullfs libraries
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
+ This package contains the debugging symbols for nfs-ganesha-nullfs. 
+
+Package: nfs-ganesha-proxy-dbg
+Multi-Arch: same
+Architecture: any
+Section: debug
+Depends: nfs-ganesha-proxy (=${binary:Version}), ${misc:Depends}
+Description: nfs-ganesha fsal proxy libraries
+ NFS-GANESHA is a NFS Server running in user space with a large cache.
+ It comes with various backend modules to support different file systems
+ and namespaces. Supported name spaces are POSIX, PROXY, SNMP, FUSE-like,
+ HPSS, LUSTRE, XFS and ZFS.
+ This package contains debugging symbols for nfs-ganesha-proxy.
