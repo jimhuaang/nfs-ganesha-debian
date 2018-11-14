@@ -1,5 +1,6 @@
 #!/usr/bin/make -f
 
+export PREFIX=/usr
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
@@ -18,3 +19,6 @@ override_dh_install:
 	LINKTARGET=`readlink debian/tmp/lib/$(DEB_HOST_MULTIARCH)/libntirpc.so`; \
 	ln -sf /lib/$(DEB_HOST_MULTIARCH)/$$LINKTARGET debian/tmp/lib/$(DEB_HOST_MULTIARCH)/libntirpc.so
 	dh_install
+
+override_dh_strip:
+	dh_strip --dbg-package=libntirpc1-dbg
