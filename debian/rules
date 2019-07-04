@@ -40,7 +40,7 @@ override_dh_auto_configure:
 		-DUSE_FSAL_PROXY=ON \
 		-DUSE_DBUS=ON \
 		-DUSE_CB_SIMULATOR=ON \
-		-DUSE_9P=ON \
+		-DUSE_9P=OFF \
 		-DDISTNAME_HAS_GIT_DATA=OFF \
 		-DUSE_MAN_PAGE=YES \
 		-DDEBUG_SYMS=ON
