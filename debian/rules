@@ -81,18 +81,11 @@ override_dh_shlibdeps:
 	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
 
 override_dh_strip:
-	dh_strip \
-		-Xnfs-ganesha-qfs \
-		-Xnfs-ganesha-vfs \
-		-Xnfs-ganesha-xfs \
-		-Xnfs-ganesha-mem \
-		-Xnfs-ganesha-nullfs \
-		-Xnfs-ganesha-proxy \
-		--dbg-package=nfs-ganesha-dbg
-	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-qfs-dbg
-	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-vfs-dbg
-	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-xfs-dbg
-	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-mem-dbg
-	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-nullfs-dbg
-	dh_strip -Xnfs-ganesha --dbg-package=nfs-ganesha-proxy-dbg
+	dh_strip -pnfs-ganesha --dbg-package=nfs-ganesha-dbg
+	dh_strip -pnfs-ganesha-qfs --dbg-package=nfs-ganesha-qfs-dbg
+	dh_strip -pnfs-ganesha-vfs --dbg-package=nfs-ganesha-vfs-dbg
+	dh_strip -pnfs-ganesha-xfs --dbg-package=nfs-ganesha-xfs-dbg
+	dh_strip -pnfs-ganesha-mem --dbg-package=nfs-ganesha-mem-dbg
+	dh_strip -pnfs-ganesha-nullfs --dbg-package=nfs-ganesha-nullfs-dbg
+	dh_strip -pnfs-ganesha-proxy --dbg-package=nfs-ganesha-proxy-dbg
 
